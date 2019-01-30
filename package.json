@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prisma": "prisma"
+    "prisma": "prisma",
+    "start:demo": "node demo/index.js"
   },
   "keywords": [],
   "author": "",
