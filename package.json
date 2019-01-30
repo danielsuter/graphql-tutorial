@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prisma": "prisma",
-    "start:demo": "node demo/index.js"
+    "start:demo": "supervisor --watch demo --extensions js,graphql demo/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "jsonwebtoken": "^8.4.0",
     "prisma": "^1.23.1",
     "prisma-client-lib": "^1.23.1"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
   }
 }
