@@ -1,6 +1,14 @@
+const employees = require("./data/employees").employees;
 const {GraphQLServer} = require('graphql-yoga');
 
-const resolvers = {};
+const resolvers = {
+    Query: {
+        info: () => `I'm a ZE demo GraphQL server`,
+        employees: () => {
+            return employees;
+        },
+    }
+};
 
 const server = new GraphQLServer({
     typeDefs: './demo/schema.graphql',

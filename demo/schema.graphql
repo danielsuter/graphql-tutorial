@@ -1,3 +1,11 @@
 type Query {
     info: String!
+    employees: [Employee!]!
+}
+
+type Employee {
+    id: ID!
+    firstname: String!
+    lastname: String!
+    hobbies: [String!]!
 }
