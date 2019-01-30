@@ -3,6 +3,10 @@ type Query {
     employees: [Employee!]!
 }
 
+type Mutation {
+    addEmployee(firstname: String!, lastname: String, hobbies: [String]): Employee!
+}
+
 type Employee {
     id: ID!
     firstname: String!

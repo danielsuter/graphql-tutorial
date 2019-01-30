@@ -7,6 +7,18 @@ const resolvers = {
         employees: () => {
             return employees;
         },
+    },
+    Mutation: {
+        addEmployee: (parent, {firstname, lastname, hobbies}, context, info) => {
+            const newEmployee = {
+                id: employees.length,
+                firstname,
+                lastname,
+                hobbies: hobbies === undefined ? [] : hobbies
+            };
+            employees.push(newEmployee);
+            return newEmployee;
+        },
     }
 };
 
