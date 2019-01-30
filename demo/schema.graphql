@@ -1,6 +1,7 @@
 type Query {
     info: String!
     employees: [Employee!]!
+    projects: [Project!]!
 }
 
 type Mutation {
@@ -14,4 +15,11 @@ type Employee {
     lastname: String!
     fullname: String!
     hobbies: [String!]!
+    projects: [Project!]!
+}
+
+type Project {
+    id: ID!
+    name: String!
+    technologies: [String!]!
 }

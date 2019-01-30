@@ -1,3 +1,4 @@
+const projects = require("./data/employees").projects;
 const employees = require("./data/employees").employees;
 const {GraphQLServer} = require('graphql-yoga');
 
@@ -5,6 +6,7 @@ const resolvers = {
     Query: {
         info: () => `I'm a ZE demo GraphQL server`,
         employees: () => employees,
+        projects: () => projects,
     },
     Mutation: {
         addEmployee: (parent, {firstname, lastname, hobbies}, context, info) => {
@@ -30,7 +32,8 @@ const resolvers = {
     },
     Employee: {
         fullname: (parent) => parent.firstname + ' ' + parent.lastname,
-    }
+        projects: (parent) => projects.filter(project => parent.projectIds.some(id => project.id === id)),
+    },
 };
 
 const server = new GraphQLServer({
