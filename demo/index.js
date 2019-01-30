@@ -4,9 +4,7 @@ const {GraphQLServer} = require('graphql-yoga');
 const resolvers = {
     Query: {
         info: () => `I'm a ZE demo GraphQL server`,
-        employees: () => {
-            return employees;
-        },
+        employees: () => employees,
     },
     Mutation: {
         addEmployee: (parent, {firstname, lastname, hobbies}, context, info) => {
@@ -19,6 +17,9 @@ const resolvers = {
             employees.push(newEmployee);
             return newEmployee;
         },
+    },
+    Employee: {
+        fullname: (parent) => parent.firstname + ' ' + parent.lastname,
     }
 };
 

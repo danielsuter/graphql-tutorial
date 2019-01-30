@@ -11,5 +11,6 @@ type Employee {
     id: ID!
     firstname: String!
     lastname: String!
+    fullname: String!
     hobbies: [String!]!
 }
