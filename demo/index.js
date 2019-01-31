@@ -4,7 +4,7 @@ const {GraphQLServer} = require('graphql-yoga');
 const resolvers = {
     Query: {
         info: () => `Welcome to the Web platform demo`,
-        employees: () => employees,
+        employees: (parent, {limit}) => employees.slice(0, limit),
         projects: () => projects,
     },
     Mutation: {
