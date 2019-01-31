@@ -1,3 +1,24 @@
 type Query {
     info: String!
+    employees: [Employee!]!
+    projects: [Project!]!
+}
+
+type Mutation {
+    addEmployee(firstname: String!, lastname: String!, hobbies: [String!]): Employee!
+    updateEmployee(id: ID!, firstname: String, lastname: String, hobbies: [String!]): Employee!
+}
+
+type Employee {
+    id: ID!
+    firstname: String!
+    lastname: String!
+    hobbies: [String!]!
+    projects: [Project!]!
+}
+
+type Project {
+    id: ID!,
+    name: String!
+    technologies: [String!]!
 }
